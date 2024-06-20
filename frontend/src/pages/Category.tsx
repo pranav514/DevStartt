@@ -49,15 +49,15 @@ const Category: React.FC = () => {
             </SelectValue>
           </SelectTrigger>
           <SelectContent className="bg-gray-700 border border-gray-600 shadow-lg rounded-md text-white">
-            <SelectItem value="ecommerce" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">E Commerce</SelectItem>
-            <SelectItem value="blogs" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Blogs</SelectItem>
-            <SelectItem value="contentManagement" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Content Management</SelectItem>
-            <SelectItem value="portfolio" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Portfolio</SelectItem>
-            <SelectItem value="Social Media" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Social Media</SelectItem>
-            <SelectItem value="elearning" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">eLearning</SelectItem>
-            <SelectItem value="mobileApp" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Mobile App (React Native)</SelectItem>
-            <SelectItem value="staticSite" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Static Site</SelectItem>
-            <SelectItem value="fullStackApp" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Full Stack App</SelectItem>
+            <SelectItem value="ecommerce" className=" hover:bg-red-700 hover:text-white transition-all duration-300"> E Commerce</SelectItem>
+            <SelectItem value="blogs" className=" hover:bg-red-700 hover:text-white transition-all duration-300"> Blogs</SelectItem>
+            <SelectItem value="contentManagement" className=" hover:bg-red-700 hover:text-white transition-all duration-300"> Content Management</SelectItem>
+            <SelectItem value="portfolio" className=" hover:bg-red-700 hover:text-white transition-all duration-300"> Portfolio</SelectItem>
+            <SelectItem value="socialMedia" className=" hover:bg-red-700 hover:text-white transition-all duration-300"> Social Media</SelectItem>
+            <SelectItem value="elearning" className=" hover:bg-red-700 hover:text-white transition-all duration-300"> eLearning</SelectItem>
+            <SelectItem value="mobileApp" className=" hover:bg-red-700 hover:text-white transition-all duration-300"> Mobile App (React Native)</SelectItem>
+            <SelectItem value="staticSite" className=" hover:bg-red-700 hover:text-white transition-all duration-300"> Static Site</SelectItem>
+            <SelectItem value="fullStackApp" className=" hover:bg-red-700 hover:text-white transition-all duration-300"> Full Stack App</SelectItem>
           </SelectContent>
         </Select>
 
