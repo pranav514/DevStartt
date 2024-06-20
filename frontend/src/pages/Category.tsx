@@ -42,14 +42,14 @@ const Category: React.FC = () => {
       </header>
       
       <div className="w-full max-w-2xl bg-gray-800 p-8 rounded-lg shadow-2xl border border-red-600 transition-all duration-300 ease-in-out hover:shadow-red-600">
-        <Select value={selectedCategory || undefined} onValueChange={handleCategoryChange}>
+        <Select value={selectedCategory || "Select a category"} onValueChange={handleCategoryChange}>
           <SelectTrigger className="w-full bg-gray-700 p-3 rounded-md border border-red-600 shadow-md text-white focus:ring-2 focus:ring-red-400">
             <SelectValue>
               {selectedCategory ? selectedCategory : "Select a category"}
             </SelectValue>
           </SelectTrigger>
           <SelectContent className="bg-gray-700 border border-gray-600 shadow-lg rounded-md text-white">
-            <SelectItem value="ecommerce" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">eCommerce</SelectItem>
+            <SelectItem value="ecommerce" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">E Commerce</SelectItem>
             <SelectItem value="blogs" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Blogs</SelectItem>
             <SelectItem value="contentManagement" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Content Management</SelectItem>
             <SelectItem value="portfolio" className="p-3 hover:bg-red-700 hover:text-white transition-all duration-300">Portfolio</SelectItem>
