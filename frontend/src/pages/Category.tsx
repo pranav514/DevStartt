@@ -37,7 +37,7 @@ const Category: React.FC = () => {
     if (selectedCategory) {
       navigate(`/libraries?category=${selectedCategory}`);
     } else {
-      alert("Please select a category first.");
+      navigate('/libraries')
     }
   };
 
@@ -45,7 +45,7 @@ const Category: React.FC = () => {
     if (selectedCategory) {
       navigate(`/best-practices?category=${selectedCategory}`);
     } else {
-      alert("Please select a category first.");
+      navigate('/best-practices');
     }
   };
 

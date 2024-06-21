@@ -37,7 +37,7 @@ const Libraries: React.FC = () => {
     if (selectedCategory) {
       navigate(`/best-practices?category=${selectedCategory}`);
     } else {
-      alert("Please select a category first.");
+      navigate('/best-practices');
     }
   };
 
