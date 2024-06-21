@@ -83,18 +83,25 @@ const Home: React.FC = () => {
       {/* Feature Section */}
       <section className="w-full py-16 bg-gray-800">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+          <Link to={"/get-started"}> 
           <FeatureCard
             title="Optimal Structures"
             description="Explore the best folder structures for different types of projects."
           />
+          </Link>
+          <Link to={"/libraries"}>
           <FeatureCard
             title="Recommended Libraries"
             description="Learn about the libraries that will make your development faster and more efficient."
           />
-          <FeatureCard
+          </Link>
+         <Link to={"/best-practices"}>
+         <FeatureCard
             title="Best Practices"
             description="Understand the best practices for writing clean, maintainable code."
           />
+         </Link>
+          
         </div>
       </section>
 

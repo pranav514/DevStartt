@@ -415,4 +415,142 @@ export const folderStructures = {
       },
     },
   };
-  
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  export const recommendedLibraries = {
+    ecommerce: [
+      "React",
+      "Redux",
+      "Material-UI",
+      "Axios",
+      "React Hook Form",
+      "Formik",
+    ],
+    blogs: [
+      "Express.js",
+      "Mongoose",
+      "Passport.js",
+      "React",
+      "Markdown-it",
+    ],
+    contentManagement: [
+      "React",
+      "Strapi",
+      "Gatsby",
+      "GraphQL",
+      "Tailwind CSS",
+    ],
+    portfolio: [
+      "React",
+      "Styled Components",
+      "Framer Motion",
+      "React Router",
+    ],
+    socialMedia: [
+      "React",
+      "Firebase",
+      "Redux",
+      "Socket.io",
+    ],
+    elearning: [
+      "Node.js",
+      "MongoDB",
+      "React",
+      "Chart.js",
+    ],
+    mobileApp: [
+      "React Native",
+      "Expo",
+      "Redux",
+      "React Navigation",
+    ],
+    staticSite: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+    ],
+    fullStackApp: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+    ],
+  };
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////
+  export const bestPractices = {
+    ecommerce: [
+      "Use secure payment gateways to protect user data.",
+      "Implement caching for faster load times.",
+      "Follow SEO best practices to enhance visibility.",
+      "Ensure cross-browser compatibility.",
+      "Optimize images for faster load times.",
+      "Regularly update security patches and libraries.",
+    ],
+    blogs: [
+      "Write high-quality, original content.",
+      "Optimize for search engines using relevant keywords.",
+      "Ensure mobile-friendly and responsive design.",
+      "Use HTTPS to secure data transmission.",
+      "Regularly update content to keep it fresh.",
+      "Use social sharing buttons to increase reach.",
+    ],
+    contentManagement: [
+      "Implement role-based access control.",
+      "Use version control for content changes.",
+      "Ensure data validation and sanitization.",
+      "Keep CMS and plugins updated for security.",
+      "Optimize database queries for performance.",
+      "Use backups to safeguard against data loss.",
+    ],
+    portfolio: [
+      "Highlight your best work prominently.",
+      "Ensure the design is visually appealing and professional.",
+      "Use responsive design to cater to all devices.",
+      "Optimize load times by minimizing file sizes.",
+      "Provide clear and easy navigation.",
+      "Keep the content concise and engaging.",
+    ],
+    socialMedia: [
+      "Ensure real-time data updates with efficient data handling.",
+      "Use strong password policies and secure authentication methods.",
+      "Implement data privacy measures to protect user data.",
+      "Use responsive design for accessibility across devices.",
+      "Optimize performance to handle high traffic.",
+      "Implement content moderation to prevent inappropriate content.",
+    ],
+    elearning: [
+      "Use engaging and interactive content to enhance learning.",
+      "Ensure the platform is accessible to all users.",
+      "Implement progress tracking for personalized learning paths.",
+      "Use secure data handling for user information.",
+      "Provide feedback mechanisms for continuous improvement.",
+      "Optimize performance to handle large volumes of users.",
+    ],
+    mobileApp: [
+      "Use platform-specific best practices for iOS and Android.",
+      "Ensure responsive design for different screen sizes.",
+      "Optimize app performance to minimize load times.",
+      "Implement secure data storage and transmission.",
+      "Use push notifications wisely to engage users.",
+      "Regularly update the app to fix bugs and add features.",
+    ],
+    staticSite: [
+      "Use a static site generator for optimal performance.",
+      "Optimize images and other assets to reduce load times.",
+      "Follow best practices for SEO to increase visibility.",
+      "Ensure the site is responsive and mobile-friendly.",
+      "Use HTTPS to secure data transmission.",
+      "Keep the design clean and minimal for a better user experience.",
+    ],
+    fullStackApp: [
+      "Use RESTful APIs for efficient data handling.",
+      "Ensure secure data transmission with HTTPS.",
+      "Implement error handling and logging for debugging.",
+      "Use modern JavaScript frameworks for the front end.",
+      "Ensure the backend is scalable and maintainable.",
+      "Use version control and continuous integration.",
+    ],
+  };

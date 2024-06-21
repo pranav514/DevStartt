@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import FolderStructure from "../components/FolderStructure";
-import { folderStructures } from "../lib/FolderStructure";
+import { useSearchParams } from "react-router-dom";
+import { folderStructures, recommendedLibraries } from "../lib/FolderStructure";
 import {
   Select,
   SelectContent,
@@ -9,13 +8,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useNavigate } from "react-router-dom";
 
-const Category: React.FC = () => {
+const Libraries: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof folderStructures | null>(
-    () => localStorage.getItem("selectedCategory") as keyof typeof folderStructures | null
+    searchParams.get("category") as keyof typeof folderStructures | null
   );
-
   const navigate = useNavigate();
+
 
   useEffect(() => {
     if (selectedCategory) {
@@ -32,15 +33,6 @@ const Category: React.FC = () => {
   const handleReset = () => {
     setSelectedCategory(null);
   };
-
-  const handleViewLibraries = () => {
-    if (selectedCategory) {
-      navigate(`/libraries?category=${selectedCategory}`);
-    } else {
-      alert("Please select a category first.");
-    }
-  };
-
   const handleViewBestPractices = () => {
     if (selectedCategory) {
       navigate(`/best-practices?category=${selectedCategory}`);
@@ -52,9 +44,9 @@ const Category: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-gray-900 pt-20 px-4 text-white">
       <header className="mb-10 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-red-500">Choose Your Category</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-red-500">Optimal Libraries</h1>
         <p className="mt-4 text-lg md:text-xl text-gray-300">
-          Select a category to see the folder structure. Explore various setups tailored to different needs.
+          Select a category to see the recommended libraries for your project.
         </p>
       </header>
 
@@ -78,33 +70,35 @@ const Category: React.FC = () => {
 
         {selectedCategory && (
           <div className="mt-8">
-            <FolderStructure structure={folderStructures[selectedCategory]} />
+            <h2 className="text-2xl font-semibold text-red-500 mb-4">Recommended Libraries for {selectedCategory}</h2>
+            <ul className="list-disc pl-5 space-y-2 text-gray-300">
+              {recommendedLibraries[selectedCategory].map((lib, index) => (
+                <li key={index} className="transition-all duration-300 ease-in-out hover:text-red-500">
+                  {lib}
+                </li>
+              ))}
+            </ul>
           </div>
         )}
-
-        <div className="mt-8 flex flex-col md:flex-row justify-center md:space-x-4 space-y-4 md:space-y-0">
-          <button
+        
+        <div className="mt-8 flex justify-center space-x-4">
+        <button
             onClick={handleReset}
             className="w-full md:w-auto px-6 py-3 bg-red-600 hover:bg-red-700 rounded-md text-white transition-all duration-300"
           >
             Reset
           </button>
           <button
-            onClick={handleViewLibraries}
-            className="w-full md:w-auto px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-md text-white transition-all duration-300"
-          >
-            View Optimal Libraries
-          </button>
-          <button
             onClick={handleViewBestPractices}
             className="w-full md:w-auto px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-md text-white transition-all duration-300"
           >
             View Best Practices
-          </button>
+            </button>
+          
         </div>
       </div>
     </div>
   );
 };
 
-export default Category;
+export default Libraries;
