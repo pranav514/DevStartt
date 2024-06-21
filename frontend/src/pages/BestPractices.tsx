@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { bestPractices } from "../lib/FolderStructure";
 import {
   Select,
@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/select";
 
 const BestPractices: React.FC = () => {
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
   const location = useLocation();
   const categoryQuery = new URLSearchParams(location.search).get("category") as keyof typeof bestPractices;
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof bestPractices | null>(categoryQuery);
