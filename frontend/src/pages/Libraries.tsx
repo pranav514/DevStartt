@@ -40,6 +40,13 @@ const Libraries: React.FC = () => {
       navigate('/best-practices');
     }
   };
+  const folderStruct = () => {
+    if (selectedCategory) {
+      navigate(`/get-started?category=${selectedCategory}`);
+    } else {
+      navigate('/get-started')
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-gray-900 pt-20 px-4 text-white">
@@ -81,7 +88,7 @@ const Libraries: React.FC = () => {
           </div>
         )}
         
-        <div className="mt-8 flex justify-center space-x-4">
+        <div className="mt-8 flex flex-col md:flex-row justify-center md:space-x-4 space-y-4 md:space-y-0">
         <button
             onClick={handleReset}
             className="w-full md:w-auto px-6 py-3 bg-red-600 hover:bg-red-700 rounded-md text-white transition-all duration-300"
@@ -93,7 +100,13 @@ const Libraries: React.FC = () => {
             className="w-full md:w-auto px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-md text-white transition-all duration-300"
           >
             View Best Practices
-            </button>
+          </button>
+          <button
+            onClick={folderStruct}
+            className="w-full md:w-auto px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-md text-white transition-all duration-300"
+          >
+            View Folder Structure
+          </button>
           
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { bestPractices } from "../lib/FolderStructure";
+import { useNavigate } from "react-router-dom";
 import {
   Select,
   SelectContent,
@@ -14,7 +15,7 @@ const BestPractices: React.FC = () => {
   const location = useLocation();
   const categoryQuery = new URLSearchParams(location.search).get("category") as keyof typeof bestPractices;
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof bestPractices | null>(categoryQuery);
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (selectedCategory) {
       localStorage.setItem("selectedCategory", selectedCategory);
@@ -29,6 +30,20 @@ const BestPractices: React.FC = () => {
 
   const handleReset = () => {
     setSelectedCategory(null);
+  };
+  const handleViewLibraries = () => {
+    if (selectedCategory) {
+      navigate(`/libraries?category=${selectedCategory}`);
+    } else {
+      navigate('/libraries')
+    }
+  };
+  const folderStruct = () => {
+    if (selectedCategory) {
+      navigate(`/get-started?category=${selectedCategory}`);
+    } else {
+      navigate('/get-started')
+    }
   };
 
   return (
@@ -71,13 +86,26 @@ const BestPractices: React.FC = () => {
           </div>
         )}
         
-        <div className="mt-8 flex justify-center space-x-4">
-          <button
+        <div className="mt-8 flex flex-col md:flex-row justify-center md:space-x-4 space-y-4 md:space-y-0">
+        <button
             onClick={handleReset}
-            className="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-md text-white transition-all duration-300"
+            className="w-full md:w-auto px-6 py-3 bg-red-600 hover:bg-red-700 rounded-md text-white transition-all duration-300"
           >
             Reset
           </button>
+          <button
+            onClick={handleViewLibraries}
+            className="w-full md:w-auto px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-md text-white transition-all duration-300"
+          >
+            View Optimal Libraries
+          </button>
+          <button
+            onClick={folderStruct}
+            className="w-full md:w-auto px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-md text-white transition-all duration-300"
+          >
+            View Folder Structure
+          </button>
+          
         </div>
       </div>
     </div>
