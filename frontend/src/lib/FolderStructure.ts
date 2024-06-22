@@ -73,7 +73,7 @@ export const folderStructures = {
         ],
         src: {
           components: [
-            "PostList.jsx",
+            "PostList.tsx",
             "PostForm.tsx",
             "CommentSection.tsx",
           ],
@@ -99,23 +99,23 @@ export const folderStructures = {
       },
       backend: {
         config: [
-          "database.js",
-          "server.js",
+          "database.ts",
+          "server.ts",
         ],
         controllers: [
-          "authController.js",
-          "postController.js",
-          "commentController.js",
+          "authController.ts",
+          "postController.ts",
+          "commentController.ts",
         ],
         models: [
-          "userModel.js",
-          "postModel.js",
-          "commentModel.js",
+          "userModel.ts",
+          "postModel.ts",
+          "commentModel.ts",
         ],
         routes: [
-          "authRoutes.js",
-          "postRoutes.js",
-          "commentRoutes.js",
+          "authRoutes.ts",
+          "postRoutes.ts",
+          "commentRoutes.ts",
         ],
       },
     },
@@ -154,7 +154,7 @@ export const folderStructures = {
         ],
         src: {
           components: [
-            "ProjectList.jsx",
+            "ProjectList.tsx",
             "AboutMe.tsx",
             "ContactForm.tsx",
           ],
@@ -188,7 +188,7 @@ export const folderStructures = {
         ],
         src: {
           components: [
-            "Feed.jsx",
+            "Feed.tsx",
             "Profile.tsx",
             "Post.tsx",
           ],
@@ -218,23 +218,23 @@ export const folderStructures = {
       },
       backend: {
         config: [
-          "database.js",
-          "server.js",
+          "database.ts",
+          "server.ts",
         ],
         controllers: [
-          "userController.js",
-          "postController.js",
-          "notificationController.js",
+          "userController.ts",
+          "postController.ts",
+          "notificationController.ts",
         ],
         models: [
-          "userModel.js",
-          "postModel.js",
-          "notificationModel.js",
+          "userModel.ts",
+          "postModel.ts",
+          "notificationModel.ts",
         ],
         routes: [
-          "userRoutes.js",
-          "postRoutes.js",
-          "notificationRoutes.js",
+          "userRoutes.ts",
+          "postRoutes.ts",
+          "notificationRoutes.ts",
         ],
       },
     },
@@ -248,7 +248,7 @@ export const folderStructures = {
         ],
         src: {
           components: [
-            "CourseList.jsx",
+            "CourseList.tsx",
             "CourseDetail.tsx",
             "EnrollmentForm.tsx",
           ],
@@ -277,23 +277,23 @@ export const folderStructures = {
       },
       backend: {
         config: [
-          "database.js",
-          "server.js",
+          "database.ts",
+          "server.ts",
         ],
         controllers: [
-          "authController.js",
-          "courseController.js",
-          "enrollmentController.js",
+          "authController.ts",
+          "courseController.ts",
+          "enrollmentController.ts",
         ],
         models: [
-          "userModel.js",
-          "courseModel.js",
-          "enrollmentModel.js",
+          "userModel.ts",
+          "courseModel.ts",
+          "enrollmentModel.ts",
         ],
         routes: [
-          "authRoutes.js",
-          "courseRoutes.js",
-          "enrollmentRoutes.js",
+          "authRoutes.ts",
+          "courseRoutes.ts",
+          "enrollmentRoutes.ts",
         ],
       },
     },

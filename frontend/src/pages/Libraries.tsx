@@ -57,7 +57,7 @@ const Libraries: React.FC = () => {
         </p>
       </header>
 
-      <div className="w-full max-w-2xl bg-gray-800 p-8 rounded-lg shadow-2xl border border-red-600 transition-all duration-300 ease-in-out hover:shadow-red-600">
+      <div className="w-full max-w-2xl bg-gray-800 p-8 rounded-lg shadow-xl border border-red-600 transition-all duration-300 ease-in-out hover:shadow-blue-600">
         <Select value={selectedCategory || "Select a category"} onValueChange={handleCategoryChange}>
           <SelectTrigger className="w-full bg-gray-700 p-3 rounded-md border border-red-600 shadow-md text-white focus:ring-2 focus:ring-red-400">
             <SelectValue>{selectedCategory ? selectedCategory : "Select a category"}</SelectValue>
