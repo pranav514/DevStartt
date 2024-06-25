@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { bestPractices } from "../lib/FolderStructure";
+import { bestPractices } from "../lib/BestPractices";
 import { useNavigate } from "react-router-dom";
 import {
   Select,
