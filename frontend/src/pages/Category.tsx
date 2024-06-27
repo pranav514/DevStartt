@@ -14,6 +14,7 @@ const Category: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof folderStructures | null>(
     () => localStorage.getItem("selectedCategory") as keyof typeof folderStructures | null
   );
+  const [searchInput, setSearchInput] = useState(""); // State for search input
 
   const navigate = useNavigate();
 
@@ -31,13 +32,14 @@ const Category: React.FC = () => {
 
   const handleReset = () => {
     setSelectedCategory(null);
+    setSearchInput(""); // Reset search input as well
   };
 
   const handleViewLibraries = () => {
     if (selectedCategory) {
       navigate(`/libraries?category=${selectedCategory}`);
     } else {
-      navigate('/libraries')
+      navigate('/libraries');
     }
   };
 
@@ -49,6 +51,16 @@ const Category: React.FC = () => {
     }
   };
 
+  // Debug: log the search input and filtered categories
+  console.log("Search Input:", searchInput);
+
+  // Filtered categories based on search input
+  const filteredCategories = Object.keys(folderStructures).filter(category => {
+    const match = category.toLowerCase().includes(searchInput.toLowerCase());
+    console.log(`Category: ${category}, Match: ${match}`); // Debug: log each category and if it matches
+    return match;
+  });
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-gray-900 pt-20 px-4 text-white">
       <header className="mb-10 text-center">
@@ -59,30 +71,34 @@ const Category: React.FC = () => {
       </header>
 
       <div className="w-full max-w-2xl bg-gray-800 p-8 rounded-lg shadow-2xl border border-red-600 transition-all duration-300 ease-in-out hover:shadow-red-600">
+        {/* Search input */}
+        <input
+          type="text"
+          placeholder="Search categories..."
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          className="w-full mb-4 p-3 bg-gray-700 rounded-md border border-red-600 shadow-md text-white focus:ring-2 focus:ring-red-400"
+        />
+
         <Select value={selectedCategory || "Select a category"} onValueChange={handleCategoryChange}>
           <SelectTrigger className="w-full bg-gray-700 p-3 rounded-md border border-red-600 shadow-md text-white focus:ring-2 focus:ring-red-400">
             <SelectValue>{selectedCategory ? selectedCategory : "Select a category"}</SelectValue>
           </SelectTrigger>
           <SelectContent className="bg-gray-700 border border-gray-600 shadow-lg rounded-md text-white">
-          <SelectItem value="ecommerce" className="hover:bg-red-700 hover:text-white transition-all duration-300">E-Commerce</SelectItem>
-<SelectItem value="blogs" className="hover:bg-red-700 hover:text-white transition-all duration-300">Blogs</SelectItem>
-<SelectItem value="contentManagement" className="hover:bg-red-700 hover:text-white transition-all duration-300">Content Management</SelectItem>
-<SelectItem value="portfolio" className="hover:bg-red-700 hover:text-white transition-all duration-300">Portfolio</SelectItem>
-<SelectItem value="socialMedia" className="hover:bg-red-700 hover:text-white transition-all duration-300">Social Media</SelectItem>
-<SelectItem value="elearning" className="hover:bg-red-700 hover:text-white transition-all duration-300">eLearning</SelectItem>
-<SelectItem value="mobileApp" className="hover:bg-red-700 hover:text-white transition-all duration-300">Mobile App (React Native)</SelectItem>
-<SelectItem value="staticSite" className="hover:bg-red-700 hover:text-white transition-all duration-300">Static Site</SelectItem>
-<SelectItem value="fullStackApp" className="hover:bg-red-700 hover:text-white transition-all duration-300">Full Stack App</SelectItem>
-<SelectItem value="cryptoWallet" className="hover:bg-red-700 hover:text-white transition-all duration-300">Crypto Wallet</SelectItem>
-<SelectItem value="fitnessApp" className="hover:bg-red-700 hover:text-white transition-all duration-300">Fitness App</SelectItem>
-<SelectItem value="travelBooking" className="hover:bg-red-700 hover:text-white transition-all duration-300">Travel Booking</SelectItem>
-<SelectItem value="realEstate" className="hover:bg-red-700 hover:text-white transition-all duration-300">Real Estate</SelectItem>
-<SelectItem value="iotManagement" className="hover:bg-red-700 hover:text-white transition-all duration-300">IoT Management</SelectItem>
-<SelectItem value="newsAggregator" className="hover:bg-red-700 hover:text-white transition-all duration-300">News Aggregator</SelectItem>
-<SelectItem value="musicStreaming" className="hover:bg-red-700 hover:text-white transition-all duration-300">Music Streaming</SelectItem>
-
-</SelectContent>
-
+            {filteredCategories.length > 0 ? (
+              filteredCategories.map((category) => (
+                <SelectItem
+                  key={category}
+                  value={category as keyof typeof folderStructures}
+                  className="hover:bg-red-700 hover:text-white transition-all duration-300"
+                >
+                  {category.replace(/([A-Z])/g, ' $1').trim()} {/* Capitalize and add spaces */}
+                </SelectItem>
+              ))
+            ) : (
+              <div className="px-4 py-2 text-gray-500">No categories found</div>
+            )}
+          </SelectContent>
         </Select>
 
         {selectedCategory && (

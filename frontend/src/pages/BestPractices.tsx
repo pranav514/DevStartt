@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { bestPractices } from "../lib/BestPractices";
-import { useNavigate } from "react-router-dom";
 import {
   Select,
   SelectContent,
@@ -11,11 +10,13 @@ import {
 } from "@/components/ui/select";
 
 const BestPractices: React.FC = () => {
-//   const navigate = useNavigate();
   const location = useLocation();
+  const navigate = useNavigate();
+  
   const categoryQuery = new URLSearchParams(location.search).get("category") as keyof typeof bestPractices;
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof bestPractices | null>(categoryQuery);
-  const navigate = useNavigate();
+  const [searchInput, setSearchInput] = useState(""); // State for search input
+
   useEffect(() => {
     if (selectedCategory) {
       localStorage.setItem("selectedCategory", selectedCategory);
@@ -30,21 +31,29 @@ const BestPractices: React.FC = () => {
 
   const handleReset = () => {
     setSelectedCategory(null);
+    setSearchInput(""); // Reset search input as well
   };
+
   const handleViewLibraries = () => {
     if (selectedCategory) {
       navigate(`/libraries?category=${selectedCategory}`);
     } else {
-      navigate('/libraries')
+      navigate('/libraries');
     }
   };
+
   const folderStruct = () => {
     if (selectedCategory) {
       navigate(`/get-started?category=${selectedCategory}`);
     } else {
-      navigate('/get-started')
+      navigate('/get-started');
     }
   };
+
+  // Filter categories based on search input
+  const filteredCategories = Object.keys(bestPractices).filter(category =>
+    category.toLowerCase().includes(searchInput.toLowerCase())
+  );
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-gray-900 pt-20 px-4 text-white">
@@ -54,30 +63,35 @@ const BestPractices: React.FC = () => {
           Explore the best practices for your selected project category. Follow these guidelines to ensure optimal project development.
         </p>
       </header>
-      
+
       <div className="w-full max-w-2xl bg-gray-800 p-8 rounded-lg shadow-2xl border border-red-600 transition-all duration-300 ease-in-out hover:shadow-red-600">
+        {/* Search input */}
+        <input
+          type="text"
+          placeholder="Search categories..."
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          className="w-full mb-4 p-3 bg-gray-700 rounded-md border border-red-600 shadow-md text-white focus:ring-2 focus:ring-red-400"
+        />
+
         <Select value={selectedCategory || "Select a category"} onValueChange={handleCategoryChange}>
           <SelectTrigger className="w-full bg-gray-700 p-3 rounded-md border border-red-600 shadow-md text-white focus:ring-2 focus:ring-red-400">
             <SelectValue>{selectedCategory ? selectedCategory : "Select a category"}</SelectValue>
           </SelectTrigger>
           <SelectContent className="bg-gray-700 border border-gray-600 shadow-lg rounded-md text-white">
-            <SelectItem value="ecommerce" className="hover:bg-red-700 hover:text-white transition-all duration-300">E Commerce</SelectItem>
-            <SelectItem value="blogs" className="hover:bg-red-700 hover:text-white transition-all duration-300">Blogs</SelectItem>
-            <SelectItem value="contentManagement" className="hover:bg-red-700 hover:text-white transition-all duration-300">Content Management</SelectItem>
-            <SelectItem value="portfolio" className="hover:bg-red-700 hover:text-white transition-all duration-300">Portfolio</SelectItem>
-            <SelectItem value="socialMedia" className="hover:bg-red-700 hover:text-white transition-all duration-300">Social Media</SelectItem>
-            <SelectItem value="elearning" className="hover:bg-red-700 hover:text-white transition-all duration-300">eLearning</SelectItem>
-            <SelectItem value="mobileApp" className="hover:bg-red-700 hover:text-white transition-all duration-300">Mobile App (React Native)</SelectItem>
-            <SelectItem value="staticSite" className="hover:bg-red-700 hover:text-white transition-all duration-300">Static Site</SelectItem>
-            <SelectItem value="fullStackApp" className="hover:bg-red-700 hover:text-white transition-all duration-300">Full Stack App</SelectItem>
-            <SelectItem value="cryptoWallet" className="hover:bg-red-700 hover:text-white transition-all duration-300">Crypto Wallet</SelectItem>
-<SelectItem value="fitnessApp" className="hover:bg-red-700 hover:text-white transition-all duration-300">Fitness App</SelectItem>
-<SelectItem value="travelBooking" className="hover:bg-red-700 hover:text-white transition-all duration-300">Travel Booking</SelectItem>
-<SelectItem value="realEstate" className="hover:bg-red-700 hover:text-white transition-all duration-300">Real Estate</SelectItem>
-<SelectItem value="iotManagement" className="hover:bg-red-700 hover:text-white transition-all duration-300">IoT Management</SelectItem>
-<SelectItem value="newsAggregator" className="hover:bg-red-700 hover:text-white transition-all duration-300">News Aggregator</SelectItem>
-<SelectItem value="musicStreaming" className="hover:bg-red-700 hover:text-white transition-all duration-300">Music Streaming</SelectItem>
-
+            {filteredCategories.length > 0 ? (
+              filteredCategories.map((category) => (
+                <SelectItem
+                  key={category}
+                  value={category as keyof typeof bestPractices}
+                  className="hover:bg-red-700 hover:text-white transition-all duration-300"
+                >
+                  {category.replace(/([A-Z])/g, ' $1').trim()} {/* Format category names */}
+                </SelectItem>
+              ))
+            ) : (
+              <div className="px-4 py-2 text-gray-500">No categories found</div>
+            )}
           </SelectContent>
         </Select>
 
@@ -93,9 +107,9 @@ const BestPractices: React.FC = () => {
             </ul>
           </div>
         )}
-        
+
         <div className="mt-8 flex flex-col md:flex-row justify-center md:space-x-4 space-y-4 md:space-y-0">
-        <button
+          <button
             onClick={handleReset}
             className="w-full md:w-auto px-6 py-3 bg-red-600 hover:bg-red-700 rounded-md text-white transition-all duration-300"
           >
@@ -113,7 +127,6 @@ const BestPractices: React.FC = () => {
           >
             View Folder Structure
           </button>
-          
         </div>
       </div>
     </div>
