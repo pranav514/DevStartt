@@ -8,6 +8,7 @@ import Category from "./pages/Category";
 import Libraries from "./pages/Libraries";
 import BestPractices from "./pages/BestPractices";
 import About from "./pages/About";
+import Tutorial from "./pages/Tutorial";
 function App() {
   
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path = "/get-started" element={<Category /> } />
+          <Route path = "/yt-tutorial" element={<Tutorial /> } />
           <Route path="/libraries" element={<Libraries />} />
           <Route path="/best-practices" element={<BestPractices />} />
         </Routes>
