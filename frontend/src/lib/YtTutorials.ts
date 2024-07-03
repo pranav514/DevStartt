@@ -418,102 +418,154 @@ export const yttutorials = {
     
     healthCareApp: [
         {
-            name: "Build a Healthcare Application with React and Firebase",
-            url: "https://www.youtube.com/watch?v=0I_2jjSkRyI"
+            name:"Step by Step Building a High-Performance MERN Stack Doctor Appointment Web App(playlist)",
+            url:"https://www.youtube.com/watch?v=GADW0lbx-Bw&list=PLv2XM6ZQzv_AtljUCwCCdi4fa2Go4ATZt"
         },
         {
-            name: "Telemedicine App with React and Node",
-            url: "https://www.youtube.com/watch?v=_Kqz8lWSPDQ"
+            name:"MERN Stack Doctor Appointment Booking Website Using ReactJs, Node Js, MongoDB, Stripe | Mern Project",
+            url:"https://www.youtube.com/watch?v=K4_J3ShsUOY"
         },
         {
-            name: "Healthcare Dashboard with React",
-            url: "https://www.youtube.com/watch?v=Z7a7JQ2XJTk"
+            name:"Hospital Management System with Nodejs, Expressjs, Ejs, and MYSQL(playlist)",
+            url:"https://www.youtube.com/watch?v=N0i0Oce6eBE&list=PL8CsGVwzS6rMec0tyOo3RaOr0cw2Fi7oW"
+        },
+        {   
+            name:"Doctor Appointment Mern Stack App(playlist)",
+            url:"https://www.youtube.com/watch?v=oY24fxdTKi8&list=PLuHGmgpyHfRw0wBGN8knxsJsMi74r34zw"
+
         }
     ],
     cryptoWallet: [
         {
-            name: "Build a Crypto Wallet with React and Solidity",
-            url: "https://www.youtube.com/watch?v=Wn_Kb3MR_cU"
+            name:"How To Build A Crypto Wallet App? MetaMask, TrustWallet, Keplr",
+            url:"https://www.youtube.com/watch?v=k_rMyxWBBY4"
         },
         {
-            name: "Crypto Wallet App with React Native",
-            url: "https://www.youtube.com/watch?v=VDOYXOlmn_E"
+            name:"Build Your Own Crypto Wallet | MetaMask Alternative",
+            url:"https://www.youtube.com/watch?v=um1AHI3X0gY"
         },
         {
-            name: "Blockchain Wallet with React and Node",
-            url: "https://www.youtube.com/watch?v=vnaCXhM9UAg"
+            name:"Build and Deploy a Web 3.0 Cryptocurrency Exchange Decentralized Application",
+            url:"https://www.youtube.com/watch?v=Y89q6T1r1Yg"
         }
     ],
     fitnessApp: [
         {
-            name: "Build a Fitness App with React Native",
-            url: "https://www.youtube.com/watch?v=24N2eBftNh4"
+            name:"Full Machine Learning Project: Coding a Fitness Tracker with Python",
+            url:"https://www.youtube.com/watch?v=cCONIdrM2VI&list=PL-Y17yukoyy0sT2hoSQxn1TdV0J7-MX4K"
         },
         {
-            name: "Fitness Tracker with React and Redux",
-            url: "https://www.youtube.com/watch?v=4q3c0ZEta4c"
+            name:"Build and Deploy a Modern React 18 Fitness Exercises App With APIs | RapidAPI",
+            url:"https://www.youtube.com/watch?v=KBpoBc98BwM"
         },
         {
-            name: "Workout App with React Native",
-            url: "https://www.youtube.com/watch?v=kA5mzQkJkBc"
-        }
+            name:"Fitness Tracker(playlist)",
+            url:"https://www.youtube.com/watch?v=hBItAN2Cyos&list=PL1Dnff_dFY-vpYcdZTkHIyNMMYWE_ZuM_"
+        },
+
     ],
     realEstate: [
         {
-            name: "Create a Real Estate Application with React",
-            url: "https://www.youtube.com/watch?v=FnH1rZi6UIg"
+            name:"MERN Real Estate Application(playlist)",
+            url:"https://www.youtube.com/watch?v=HMYX8w6fT8Q&list=PL6oj8ZA5xT3DBY81XRiqZKZYjwj5rjSez"
         },
         {
-            name: "Real Estate Listing App with React and Firebase",
-            url: "https://www.youtube.com/watch?v=ViTmL63wRz8"
+            name:"real estate website(playlist)",
+            url:"https://www.youtube.com/watch?v=2z_HaJ2xW9Y&list=PLSJxovi1IyDGFdKsGGFJbYMY-mAASXNZw"
         },
         {
-            name: "Property Management App with React and Node",
-            url: "https://www.youtube.com/watch?v=H4iA1TC8G6Y"
+            name:"Build & Deploy Full Stack Next.js Real Estate App Using React.js, TailwindCss, Supabase",
+            url:"https://www.youtube.com/watch?v=2lNjK9IwGlI"
+        },
+        {
+            name:"Integrate Django and React and Redux(playlist)",
+            url:"https://www.youtube.com/watch?v=UsfR34yl9K8&list=PL2t6cW2FkFCg9Ky0CphSSr0pJwHNb1pny"
+        },
+        {
+            name:"MERN Stack Project: Build a Modern Real Estate Marketplace with react MERN (jwt, redux toolkit)",
+            url:"https://www.youtube.com/watch?v=VAaUy_Moivw"
+        },
+        {
+            name:"Build a Full Stack Home Rentals Application in React JS, Redux, Node JS, MongoDB, JWT, Material UI",
+            url:"https://www.youtube.com/watch?v=BLDFsvWf8zY"
+        },
+        {
+            name:"React Node.js Real Estate App Full Tutorial | MERN Stack App & Real-time Chat",
+            url:"https://www.youtube.com/watch?v=eJ3YysWaP_A"
+        },
+        {
+            name:"Build and Deploy a Modern Real Estate App | React Website Tutorial",
+            url:"https://www.youtube.com/watch?v=y47gYvXchXM"
         }
     ],
     iotManagement: [
         {
-            name: "IoT Management Dashboard with React",
-            url: "https://www.youtube.com/watch?v=wfaPVzrdHAg"
+            name:" How to build an IoT cloud platform from scratch ∙ Daniele Maccioni",
+            url:"https://www.youtube.com/watch?v=wJ9IymWdwHg"
         },
         {
-            name: "IoT Device Control with React and MQTT",
-            url: "https://www.youtube.com/watch?v=OFA6Y42uJJY"
+            name:"Building an IoT product from scratch using Eclipse IoT Technologies",
+            url:"https://www.youtube.com/watch?v=4puftTW6KlI"
         },
         {
-            name: "IoT Monitoring with React and Node-RED",
-            url: "https://www.youtube.com/watch?v=KjUsEXvyI5o"
+            name:"Android App For NodeMCU (ESP8266) Controlling (IoT)",
+            url:"https://www.youtube.com/watch?v=cwNZ0XIKzrQ&list=PLZh7psEgGiCkGUx0W5Eg0ws6MASYXPiPM"
+
         }
     ],
     newsAggregator
 
 : [
-        {
-            name: "Build a News Aggregator with React and Node",
-            url: "https://www.youtube.com/watch?v=dRnq3xHvFQY"
-        },
-        {
-            name: "News App with React and Redux",
-            url: "https://www.youtube.com/watch?v=HBxZH37srg8"
-        },
-        {
-            name: "RSS News Aggregator with React",
-            url: "https://www.youtube.com/watch?v=AYoSmpzJH6A"
-        }
+    {
+        name:"Django News Website(playlist)",
+        url:"https://www.youtube.com/watch?v=OQfzJvuIOzE&list=PLgnySyq8qZmpa9xwYhI9XbwI9sbNR7bWK"
+    },
+    {
+        name:"Making News Website Using React JS",
+        url:"https://www.youtube.com/watch?v=NbspvawBo9U&list=PLyZqe-3TkBiGPYG_TM39F6fIRKJ94s9F2"
+    },{
+        name:"NEWS AGGREGATOR WEBSITE USING MERN STACK | STEP-BY-STEP GUIDE | AVANISH PATIDAR | ERROR BY NIGHT",
+        url:"https://www.youtube.com/watch?v=FUQ3dmoo2bI"
+    },
+    {
+        name:"WordPress News Aggregator Website 🚀 (Fast & Easy)",
+        url:"https://www.youtube.com/watch?v=EZQXVWUOVto"
+
+    },
+    {
+        name:"How to Build News Aggregator Website in Under 1 Hour [No Code]",
+        url:"https://www.youtube.com/watch?v=zKEHUCVXnsA"
+    },
+    {
+        name:"Using only HTML, CSS and Javascript",
+        url:"https://www.youtube.com/watch?v=-FldHnejaA4"
+    },
+    {
+        name:"Build A News Website Using Django And News API | Django Project And Tutorial For Beginners",
+        url:"https://www.youtube.com/watch?v=kqDeb3fGNlw"
+    },
+    {
+        name:"Build a News App || React Native and Expo Projects | React Native for Beginner 2024",
+        url:"https://www.youtube.com/watch?v=hnoullGuo74"
+    }
     ],
     musicStreaming: [
         {
-            name: "Music Streaming App with React and Redux",
-            url: "https://www.youtube.com/watch?v=I_0GgKfwCSk"
+            name:"Fullstack Music App(playlist)",
+            url:"https://www.youtube.com/watch?v=2HvISWe9ArM&list=PL5JH4SeiwEwxQ6FwmZLrutvdznN6xrem-"
         },
         {
-            name: "Build a Spotify Clone with React and Node",
-            url: "https://www.youtube.com/watch?v=jz7x9JxN3ZQ"
+            name:"ReactJS Music Player App(playlist)",
+            url:"https://www.youtube.com/watch?v=i_tZBYQjVRs&list=PL3kZLkdYfiOR0uC9SPzXlxozwE3Lewhu0"
         },
         {
-            name: "Music Player App with React",
-            url: "https://www.youtube.com/watch?v=wW9RlgkK4wQ"
+            name:"Build and Deploy a Better Spotify 2.0 Clone Music App with React 18! (Tailwind, Redux, RapidAPI)",
+            url:"https://www.youtube.com/watch?v=I1cpb0tYV74"
+        },
+        {
+            name:"Build Your Own Podcasts Streaming App🎙️(NEW 2024) ✅| Mastering Full-Stack with React,NodeJs,MongoDB",
+            url:"https://www.youtube.com/watch?v=1UBHU_Zqy4k"
+
         }
     ]
 };
